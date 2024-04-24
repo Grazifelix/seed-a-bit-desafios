@@ -1,0 +1,25 @@
+:root {
+    --brown: #513b3e;
+    --dark-brown: #020203;
+    --light-brown: #faf6f4;
+
+}
+
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+h1, h2 {
+    color: var(--light-brown);
+}
+
+#calculadora {
+    background-color: var(--brown);
+}
+
+#screen-calc {
+    background-color: var(--dark-brown);
+}
+
