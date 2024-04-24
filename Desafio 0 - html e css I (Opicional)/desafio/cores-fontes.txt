@@ -1,0 +1,11 @@
+Cores
+
+Bege: #faebd7
+Verde: #00d000
+Branco: #ffffff
+Preto: #000000
+
+Fontes
+
+Titillium Web
+Poppins
