@@ -1,0 +1,62 @@
+@import url('https://fonts.googleapis.com/css2?family=Bacasime+Antique&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Bacasime Antique';
+}
+
+body {
+    background-color: antiquewhite;
+    background-image: url(img/As-melhores-antiguidades-dos-EUA-podem-ser-encontradas-nessas-cidades.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: brown;
+    padding: 10%;
+    margin: 5%;
+    border-radius: 10px;
+    color: antiquewhite;
+}
+
+h1 {
+    font-size: 36px;
+    margin-bottom: 50px;
+}
+
+#contador-num {
+    margin-top: 24px;
+    font-size: 30px;
+}
+
+#button-div {
+    display: flex;
+    gap: 12px;
+
+    margin-top: 24px;
+}
+
+button {
+    padding: 12px 30px;
+    text-align: center;
+    background-color: antiquewhite;
+    color: brown;
+    border-width: 0;
+    border-radius: 10px;
+    font-size: 18px;
+    font-weight: 700;
+}
+
+button:hover {
+    background-color: brown;
+    color: antiquewhite;
+    border-width: 1px;
+    border-color: antiquewhite;
+}
