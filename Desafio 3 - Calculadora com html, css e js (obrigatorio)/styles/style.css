@@ -2,24 +2,112 @@
     --brown: #513b3e;
     --dark-brown: #020203;
     --light-brown: #faf6f4;
+    --medium-brown: #e4e1e0;
 
 }
 
 * {
-    margin: 0px;
-    padding: 0px;
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
 }
 
-h1, h2 {
+body {
+    background-image: url(../img/background.jpg);
+    background-size: cover;
+}
+
+h1,
+h2 {
     color: var(--light-brown);
 }
 
+h1 {
+    text-align: end;
+}
+
+section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+button {
+    background-color: var(--light-brown);
+    color: var(--dark-brown);
+    width: 42px;
+    height: 42px;
+    border-radius: 10px;
+    box-shadow: 0px 3px 6px var(--dark-brown);
+    font-weight: 600;
+    font-size: large;
+    border: none;
+    margin-bottom: 6px;
+}
+
+@media (min-width: 1024px) {
+    button {
+        width: 100px;
+        height: 100px;
+    }
+
+}
+
+button:hover {
+    background-color: var(--medium-brown);
+}
+
+#titulo {
+    text-align: center;
+    color: var(--light-brown);
+    margin-top: 30px;
+}
+
 #calculadora {
+    display: flex;
+    flex-direction: column;
     background-color: var(--brown);
+    border-radius: 12px;
+    margin: 30px;
+    box-shadow: 0px 3px 6px var(--dark-brown);
+}
+
+@media (min-width: 1024px) {
+    #calculadora {
+        width: 500px;
+    }
+
 }
 
 #screen-calc {
     background-color: var(--dark-brown);
+    padding: 30px;
+    border-radius: 12px 12px 0px 0px;
 }
 
+#num-principal {
+    font-size: 36px;
+}
+
+#num-secundario {
+    font-size: 24px;
+}
+
+#buttons-num {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px;
+
+}
+
+#button-igual {
+    width: 84px;
+}
+
+@media (min-width: 1024px) {
+    #button-igual {
+        width: 200px;
+    }
+
+}
