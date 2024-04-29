@@ -1,6 +1,3 @@
-// let num = document.getElementsByClassName("number")
-// let button = document.getElementsByTagName("button")
-
 const button_zero = document.querySelector("#button-0")
 const button_one = document.querySelector("#button-1")
 const button_two = document.querySelector("#button-2")
@@ -28,13 +25,13 @@ const button_C = document.querySelector("#button-C")
 const num_principal = document.querySelector('#num-principal')
 const num_secundario = document.querySelector('#num-secundario')
 
-let numberConcat = '0'
-let numberSecundary = '0'
+let numberConcat = ''
+let numberSecundary = ''
+let numberPrincipal = ''
 let operador = ''
+let ce_pressed = false
 
-function toNumber(letra){
-    // console.log(letra)
-    // console.log(parseInt(letra))
+function toNumber(letra) {
     return parseInt(letra)
 }
 
@@ -42,7 +39,7 @@ function toNumber(letra){
 function soma(number_one, number_two) {
     console.log('----------soma----------')
     result = toNumber(number_one) + toNumber(number_two)
-    console.log("resultado:", result)
+    console.log("resultado soma:", result)
     return result
 }
 
@@ -61,173 +58,277 @@ function multiplicacao(number_one, number_two) {
 }
 
 function divisao(number_one, number_two) {
-
     // o resultado esta retornando sempre 1
     console.log('----------divisao----------')
-    result = toNumber(number_one)/toNumber(number_two)
+    result = toNumber(number_one) / toNumber(number_two)
     console.log("resultado:", result)
     return result
 }
 
 // operadores
-function selectOperation(operador){
+function selectOperation(operador) {
     console.log('operador: ', operador)
     switch (operador) {
-        case '+' :
-            result = soma(num_principal.textContent, num_secundario.textContent)
+        case '+':
+            result = soma(numberSecundary, numberPrincipal)
             return result
-           
         case '-':
-            result = subtracao(num_principal.textContent, num_secundario.textContent)
+            result = subtracao(numberSecundary, numberPrincipal)
             return result
-        case '*':
-            result =  multiplicacao(num_principal.textContent, num_secundario.textContent)
+        case 'x':
+            result = multiplicacao(numberSecundary, numberPrincipal)
             return result
         case '/':
-            result = divisao(num_principal.textContent, num_secundario.textContent)
+            result = divisao(numberSecundary, numberPrincipal)
             return result
         default:
             console.log('erro')
             break
-            
+
     }
 }
 
 
-// asdds
-function writeOnScreen_Principal(num){
-    // numberConcat = numberConcat + num
-    // num_principal.textContent = numberConcat
-    if(num != '+'){
-        numberConcat = numberConcat + num
-        num_principal.textContent = numberConcat
-    } else {
-        num_principal.textContent = num
-    }
-    
+// 
+function writeOnScreen_Principal(num) {
+    num_principal.textContent = num
 }
 
-
-function writeOnScreen_Secundary(){
-    // console.log(num)
-    numberSecundary = numberConcat
-    num_secundario.textContent = numberSecundary
+function writeOnScreen_Secundary(num) {
+    num_secundario.textContent = num
 }
 
+function concat(num) {
+    numberConcat = numberConcat + num
+    console.log('CONCAT:', numberConcat)
+
+    return numberConcat
+}
+
+function concatNumber(num) {
+    numberPrincipal = numberPrincipal + num
+    console.log('NumberPrincipal:', numberPrincipal)
+
+}
 
 // limpar ultimo numero
 button_CE.addEventListener('click', () => {
-    numberConcat = 0
+    ce_pressed = true
+    numberConcat = '0'
+    numberPrincipal = '0'
     writeOnScreen_Principal(numberConcat)
-    
+
 })
 
 //limpar tudo
 button_C.addEventListener('click', () => {
-    writeOnScreen_Principal(0)
-    writeOnScreen_Secundary(0)
+    numberConcat = '0'
+    numberPrincipal = '0'
+    numberSecundary = '0'
+    writeOnScreen_Principal('0')
+    writeOnScreen_Secundary('0')
 })
 
 // Numeros
 button_zero.addEventListener('click', () => {
-    console.log(button_zero.textContent)
-    writeOnScreen_Principal(button_zero.textContent)
+    num = concat(button_zero.textContent)
+    concatNumber(button_zero.textContent)
+    writeOnScreen_Principal(num)
 })
 
 button_one.addEventListener('click', () => {
-    console.log(button_one.textContent)
-    writeOnScreen_Principal(button_one.textContent)
+    num = concat(button_one.textContent)
+    concatNumber(button_one.textContent)
+    writeOnScreen_Principal(num)
 })
 
 button_two.addEventListener('click', () => {
-    console.log(button_two.textContent)
-    writeOnScreen_Principal(button_two.textContent)
+    num = concat(button_two.textContent)
+    concatNumber(button_two.textContent)
+    writeOnScreen_Principal(num)
 })
 
 button_three.addEventListener('click', () => {
-    console.log(button_three.textContent)
-    writeOnScreen_Principal(button_three.textContent)
+    num = concat(button_three.textContent)
+    concatNumber(button_three.textContent)
+    writeOnScreen_Principal(num)
 })
 
 button_four.addEventListener('click', () => {
-    console.log(button_four.textContent)
-    writeOnScreen_Principal(button_four.textContent)
+    num = concat(button_four.textContent)
+    concatNumber(button_four.textContent)
+    writeOnScreen_Principal(num)
 })
 
 button_five.addEventListener('click', () => {
-    console.log(button_five.textContent)
-    writeOnScreen_Principal(button_five.textContent)
+    num = concat(button_five.textContent)
+    concatNumber(button_five.textContent)
+    writeOnScreen_Principal(num)
 })
 
 button_six.addEventListener('click', () => {
-    console.log(button_six.textContent)
-    writeOnScreen_Principal(button_six.textContent)
+    num = concat(button_six.textContent)
+    concatNumber(button_six.textContent)
+    writeOnScreen_Principal(num)
 })
 
 button_seven.addEventListener('click', () => {
-    console.log(button_seven.textContent)
-    writeOnScreen_Principal(button_seven.textContent)
+    num = concat(button_seven.textContent)
+    concatNumber(button_seven.textContent)
+    writeOnScreen_Principal(num)
 })
 
 button_eight.addEventListener('click', () => {
-    console.log(button_eight.textContent)
-    writeOnScreen_Principal(button_eight.textContent)
+    num = concat(button_eight.textContent)
+    concatNumber(button_eight.textContent)
+    writeOnScreen_Principal(num)
 })
 
 button_nine.addEventListener('click', () => {
-    console.log(button_nine.textContent)
-    writeOnScreen_Principal(button_nine.textContent)
+    num = concat(button_nine.textContent)
+    concatNumber(button_nine.textContent)
+    writeOnScreen_Principal(num)
 })
+
 
 // operadores aritméticos
-
 button_sum.addEventListener('click', () => {
-    console.log(button_sum.textContent)
-    operador = '+'
-    writeOnScreen_Secundary()
-    writeOnScreen_Principal(button_sum.textContent)
-    
+
+    if (ce_pressed == false) {
+        if (numberSecundary != '' && operador != '' && numberPrincipal != '') {
+            numberConcat = ''
+            num = concat(button_sum.textContent)
+            writeOnScreen_Principal(num)
+            result = selectOperation(operador)
+            numberSecundary = result
+            writeOnScreen_Secundary(numberSecundary)
+            numberPrincipal = ''
+            operador = button_sum.textContent
+
+        } else {
+            num = concat(button_sum.textContent)
+            writeOnScreen_Principal(num)
+            operador = button_sum.textContent
+            numberSecundary = numberPrincipal
+            writeOnScreen_Secundary(numberSecundary)
+            numberPrincipal = ''
+        }
+
+
+    } else {
+        ce_pressed = false
+    }
+
 })
 
+
+
+
 button_sub.addEventListener('click', () => {
-    console.log(button_sub.textContent)
-    operador = '-'
-    writeOnScreen_Secundary()
-    writeOnScreen_Principal(button_sub.textContent)
+
+    if (ce_pressed == false) {
+        if (numberSecundary != '' && operador != '' && numberPrincipal != '') {
+            numberConcat = ''
+            num = concat(button_sub.textContent)
+            writeOnScreen_Principal(num)
+            result = selectOperation(operador)
+            numberSecundary = result
+            writeOnScreen_Secundary(numberSecundary)
+            numberPrincipal = ''
+            operador = button_sub.textContent
+
+        } else {
+            num = concat(button_sub.textContent)
+            writeOnScreen_Principal(num)
+            operador = button_sub.textContent
+            numberSecundary = numberPrincipal
+            writeOnScreen_Secundary(numberSecundary)
+            numberPrincipal = ''
+        }
+
+    } else {
+        ce_pressed = false
+    }
+
 })
 
 button_divide.addEventListener('click', () => {
-    console.log(button_divide.textContent)
-    operador = '/'
-    writeOnScreen_Secundary()
-    writeOnScreen_Principal(button_divide.textContent)
+
+    if (ce_pressed == false) {
+        if (numberSecundary != '' && operador != '' && numberPrincipal != '') {
+            numberConcat = ''
+            num = concat(button_divide.textContent)
+            writeOnScreen_Principal(num)
+            result = selectOperation(operador)
+            numberSecundary = result
+            writeOnScreen_Secundary(numberSecundary)
+            numberPrincipal = ''
+            operador = button_divide.textContent
+
+        } else {
+            num = concat(button_divide.textContent)
+            writeOnScreen_Principal(num)
+            operador = button_divide.textContent
+            numberSecundary = numberPrincipal
+            writeOnScreen_Secundary(numberSecundary)
+            numberPrincipal = ''
+        }
+
+    } else {
+        ce_pressed = false
+    }
+
+
 })
 
 button_multi.addEventListener('click', () => {
-    console.log(button_multi.textContent)
-    operador = '*'
-    writeOnScreen_Secundary()
-    writeOnScreen_Principal(button_multi.textContent)
-})
+
+    if (ce_pressed == false) {
+
+        if (numberSecundary != '' && operador != '' && numberPrincipal != '') {
+            numberConcat = ''
+            num = concat(button_multi.textContent)
+            writeOnScreen_Principal(num)
+            result = selectOperation(operador)
+            numberSecundary = result
+            writeOnScreen_Secundary(numberSecundary)
+            numberPrincipal = ''
+            operador = button_multi.textContent
+
+        } else {
+            num = concat(button_multi.textContent)
+            writeOnScreen_Principal(num)
+            operador = button_multi.textContent
+            numberSecundary = numberPrincipal
+            writeOnScreen_Secundary(numberSecundary)
+            numberPrincipal = ''
+        }
 
 
+    } else {
+        ce_pressed = false
+    }
 
-button_iqual.addEventListener('click', () => {
-    // console.log(button_iqual.textContent)
-    result = selectOperation(operador)
-    // console.log("resultado do =:", result)
-    writeOnScreen_Principal(result)
 })
 
 button_dot.addEventListener('click', () => {
-    console.log(button_dot.textContent)
-    writeOnScreen_Principal(button_dot.textContent)
+    num = concat(button_dot.textContent)
+    writeOnScreen_Principal(num)
+
+    //implementar lógica do botão de ponto
+    if (ce_pressed == false) {
+
+    } else {
+        ce_pressed = false
+    }
 })
 
 
+button_iqual.addEventListener('click', () => {
+    result = selectOperation(operador)
+    numberPrincipal = result
+    operador = ''
+    numberConcat = ''
+    writeOnScreen_Principal(numberPrincipal)
 
-// for (n in num){
-//     console.log(num[n].innerText)
-
-// }
-
+})
