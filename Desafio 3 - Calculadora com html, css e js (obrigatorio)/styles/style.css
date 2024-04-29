@@ -111,3 +111,16 @@ button:hover {
     }
 
 }
+
+#final-buttons {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+
+@media (min-width: 768px) {
+    #final-buttons {
+        width: 94%;
+    }
+
+}
