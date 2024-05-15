@@ -1,4 +1,4 @@
-import { BodyDefault } from "./homeStyle";
+import {Container, sectionBoxVinil} from "./homeStyle";
 import BoxVinilLogo from "../../assets/img/logo.svg"
 import elvisAlbum from "../../assets/img/elvis.jpg"
 import beatlesAlbum from "../../assets/img/beatles.jpg"
@@ -8,12 +8,13 @@ import bobAlbum from "../../assets/img/bob.jpg"
 function Home() {
     return (
 
-        <BodyDefault>
+        <Container>
             <img src={BoxVinilLogo} alt="BoxVinil-logo"></img>
             <nav>
                 <button type="submit">Home</button>
                 <button type="submit">Produtos</button>
                 <button type="submit">Contatos</button>
+
             </nav>
             <section id="section-boxvinil">
                 <h1>BoxVinil</h1>
@@ -22,9 +23,12 @@ function Home() {
                     em uma experiência de compra intuitiva e segura. Comece sua jornada musical hoje mesmo!</p>
 
             </section>
+            <sectionBoxVinil>
+                
+            </sectionBoxVinil>
             <section>
                 <h2>Principais recursos do BoxVinil</h2>
-                <p class="p-recursos">
+                <p className="p-recursos">
                     Variedade Excepcional <br></br>
                     Autenticidade Garantida <br></br>
                     Lançamentos Exclusivos <br></br>
@@ -54,7 +58,7 @@ function Home() {
             </section>
 
 
-        </BodyDefault>
+        </Container>
 
 
     )
