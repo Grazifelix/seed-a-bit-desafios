@@ -8,22 +8,16 @@ export const Container = styled.div`
     background-color: #faebd7;
     box-sizing: border-box;
     font-family: "Poppins";
-    padding-top: 60px;
-    gap: 30px;
-    padding: 30px;
+    padding-top: 3.75rem;
+    gap: 1.87rem;
+    padding: 1.87rem;
 
-    button {
-        background-color: #00d000;
-        font-size: 18px;
-        font-family: 'Poppins';
-        padding: 5px 10px 5px 10px;
-        border-radius: 10px;
-        border-width: 0;
-        color: #ffffff;
-    }
+    button:hover {
+          background-color: #000000;
+        }
 
     h1 {
-        font-size: 40px;
+        font-size: 2.5rem;
     
     }
 
@@ -34,15 +28,11 @@ export const Container = styled.div`
     nav {
         display: flex;
         flex-direction: row;
-        gap: 5px;
-    }
-
-    section {
-        width: 100%;
+        gap: 0.3rem;
     }
 
     hr {
-        margin: 10 20% 10 20%;
+        margin: 0.625rem 20% 0.625rem 20%;
         border-style: dashed;
         border-width: 0.3px;
         color:#00000069;
@@ -52,7 +42,41 @@ export const Container = styled.div`
     }
 `;
 
-export const sectionBoxVinil = styled.section`
-    margin: 40px 20% 0px 20%;
-    background-color: aquamarine;
+export const SectionBoxVinil = styled.section`
+    padding: 1.25rem 20%;
+    
+    p {
+        font-size: 1.25rem;
+    }
+
+`
+
+export const SectionAlbums = styled.section`
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+`
+
+export const ButtonMenu = styled.section`
+        background-color: #00d000;
+        font-size: 1.1rem;
+        font-family: 'Poppins';
+        padding: 0.3rem 0.625rem 0.3rem 0.625rem;
+        border-radius: 0.625rem;
+        border-width: 0;
+        color: #ffffff;
+
+        &:hover {
+          background-color: #000000;
+        }
+
+`
+
+export const ButtonBuy = styled(ButtonMenu)`
+    padding: 0.3rem 1.25rem 0.3rem 1.25rem;
+    width: 10%;
+    margin-top: 1.25rem;
+    text-transform: uppercase;
+
 `
