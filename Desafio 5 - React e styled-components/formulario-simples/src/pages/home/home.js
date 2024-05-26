@@ -1,4 +1,4 @@
-import { HomeBackground} from "./homeStyle";
+import { HomeBackground, PasswordLabel} from "./homeStyle";
 import InputField from "../../components/inputField/inputField";
 import ShowContent from "../../components/showContent/showContent";
 import { useState, useEffect } from "react";
@@ -22,6 +22,8 @@ function Home() {
             if (senha.length >= 6) {
                 setPasswordLengthMsg(true)
                 setIsDisabled(false)
+            } else {
+                setIsDisabled(true)
             }
         } else {
             setPasswordLengthMsg(true)
@@ -50,7 +52,7 @@ function Home() {
                     <InputField label={"Telefone:"} type={"text"} placeholder={"(00) 00000-0000"} saveState={setTelefoneState}></InputField>
                     <InputField label={"Cpf:"} type={"text"} placeholder={"Digite seu CPF"} saveState={setCpf}></InputField>
                     <InputField label={"Senha:"} type={"password"} placeholder={"Digite sua senha"} saveState={setSenha}></InputField>
-                    <label hidden={passowordLengthMsg}>A senha deve conter no minimo 6 caracteres.</label>
+                    <PasswordLabel hidden={passowordLengthMsg}>A senha deve conter no minimo 6 caracteres.</PasswordLabel>
                     <Button buttonName={"Enviar"} callFunction={alternar} isDisabled={isDisabled}></Button>
                 </form>
 
