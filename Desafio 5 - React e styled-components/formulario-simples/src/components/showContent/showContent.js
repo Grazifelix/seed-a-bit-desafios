@@ -1,12 +1,10 @@
+import { Label, Input, DivInputField} from "../inputField/inputFieldStyle";
 
-
-function ShowContent({label, userContent }) {
+export default function ShowContent({label, userContent }) {
     return (
-        <div>
-            <label>{label}</label>
-            <input placeholder={userContent} disabled></input>
-        </div>
+        <DivInputField>
+            <Label>{label}</Label>
+            <Input placeholder={userContent} disabled></Input>
+        </DivInputField>
     );
 }
-
-export default ShowContent
