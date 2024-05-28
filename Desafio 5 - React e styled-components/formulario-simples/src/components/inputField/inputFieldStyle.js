@@ -17,7 +17,7 @@ export const Label = styled.label`
 `;
 
 export const Input = styled.input`
-    width: 50rem;
+    
     height: 3rem;
     border: 2px solid #CBCED2;
     border-radius: 0.25rem;
@@ -35,5 +35,17 @@ export const Input = styled.input`
 
     &::placeholder {
         color: #C4CCD9;
+    }
+
+    @media (min-width: 500px ) {
+        width: 25rem;
+    }
+
+    @media (min-width: 1024px) {
+        width: 50rem;
+    }
+
+    @media (min-width: 2560px){
+        width: 100rem;
     }
 `;

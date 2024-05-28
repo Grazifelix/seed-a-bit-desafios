@@ -19,4 +19,8 @@ export const ButtonStyled = styled.button`
         background-color: #8997AC;
     }
 
+    @media (min-width: 2560px){
+        width: 25rem;
+    }
+
 `;
